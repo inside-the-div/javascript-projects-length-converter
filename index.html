@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Css/style.css">
+    <title>Length Converter</title>
+</head>
+<body>
+    <div class="length-container">
+        <h1><i>Length Converter</i></h1>
+        <div id="lengthInput" class="container-feild-group">
+            <div class="container-feild">             
+                <div class="input-group">
+                    <div class="input-label">                   
+                        <label for="tempFrom">From:</label>
+                        <select name="temp-from" class="select-group" id="tempFrom">
+                            <option value="Millimeter">Millimeter</option>
+                            <option value="Centimeter">Centimeter</option>
+                            <option value="Decimeter">Decimeter</option>
+                            <option value="Meter">Meter</option>
+                            <option value="Kilometer">Kilometer</option>
+                            <option value="Foot">Foot</option>
+                            <option value="Inch">Inch</option>
+                            <option value="Mile">Mile</option>
+                            <option value="Yard">Yard</option>
+                          </select>
+                    </div>               
+                    <input type="number" name="from-temperature" min="0" class="input-feild">
+                </div>
+                
+                <div class="input-group">
+                    <div class="input-label">
+                        <label for="toFrom">To:</label>
+                        <select name="to-from" class="select-group" id="toFrom">
+                            <option value="Millimeter">Millimeter</option>
+                            <option value="Centimeter">Centimeter</option>
+                            <option value="Decimeter">Decimeter</option>
+                            <option value="Meter">Meter</option>
+                            <option value="Kilometer">Kilometer</option>
+                            <option value="Foot">Foot</option>
+                            <option value="Inch">Inch</option>
+                            <option value="Mile">Mile</option>
+                            <option value="Yard">Yard</option>
+                          </select>
+                    </div>               
+                    <input type="number" name="to-temperature" min="0" class="input-feild">
+                </div>
+
+                <div class="input-group">
+                    <button class="btn btn-reset">Reset</button>
+                    <button class="btn btn-calculate">Calculate</button>
+                </div>        
+            </div>
+            
+            <div id="lengthOutput" class="container-feild">
+
+            </div>
+        </div>        
+    </div>    
+</body>
+</html>
