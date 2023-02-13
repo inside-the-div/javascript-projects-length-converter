@@ -4,60 +4,83 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Css/style.css">
+    <link rel="stylesheet" href="../common-assets/css/project-common-css.css">
     <title>Length Converter</title>
 </head>
 <body>
-    <div class="length-container">
+    <div class="container">
         <h1><i>Length Converter</i></h1>
         <div id="lengthInput" class="container-feild-group">
             <div class="container-feild">             
                 <div class="input-group">
                     <div class="input-label">                   
-                        <label for="tempFrom">From:</label>
-                        <select name="temp-from" class="select-group" id="tempFrom">
-                            <option value="Millimeter">Millimeter</option>
-                            <option value="Centimeter">Centimeter</option>
-                            <option value="Decimeter">Decimeter</option>
-                            <option value="Meter">Meter</option>
-                            <option value="Kilometer">Kilometer</option>
-                            <option value="Foot">Foot</option>
-                            <option value="Inch">Inch</option>
-                            <option value="Mile">Mile</option>
-                            <option value="Yard">Yard</option>
-                          </select>
-                    </div>               
-                    <input type="number" name="from-temperature" min="0" class="input-feild">
+                        <label for="fromSelectBox">From:</label>                        
+                    </div>
+                    <select name="temp-from" class="select-group" id="fromSelectBox">
+                        <option value="Millimeter">Millimeter</option>
+                        <option value="Centimeter">Centimeter</option>
+                        <option value="Decimeter">Decimeter</option>
+                        <option value="Meter">Meter</option>
+                        <option value="Kilometer">Kilometer</option>
+                        <option value="Foot">Foot</option>
+                        <option value="Inch">Inch</option>
+                        <option value="Mile">Mile</option>
+                        <option value="Yard">Yard</option>
+                    </select>            
+                    <input placeholder="From Length" id="fromLength" type="number" name="from-length" min="0" class="input-feild">
                 </div>
                 
                 <div class="input-group">
                     <div class="input-label">
-                        <label for="toFrom">To:</label>
-                        <select name="to-from" class="select-group" id="toFrom">
-                            <option value="Millimeter">Millimeter</option>
-                            <option value="Centimeter">Centimeter</option>
-                            <option value="Decimeter">Decimeter</option>
-                            <option value="Meter">Meter</option>
-                            <option value="Kilometer">Kilometer</option>
-                            <option value="Foot">Foot</option>
-                            <option value="Inch">Inch</option>
-                            <option value="Mile">Mile</option>
-                            <option value="Yard">Yard</option>
-                          </select>
-                    </div>               
-                    <input type="number" name="to-temperature" min="0" class="input-feild">
+                        <label for="toSelectBox">To:</label>
+                    </div>
+                    <select name="to-from" class="select-group" id="toSelectBox">
+                        <option value="Millimeter">Millimeter</option>
+                        <option value="Centimeter">Centimeter</option>
+                        <option value="Decimeter">Decimeter</option>
+                        <option value="Meter">Meter</option>
+                        <option value="Kilometer">Kilometer</option>
+                        <option value="Foot">Foot</option>
+                        <option value="Inch">Inch</option>
+                        <option value="Mile">Mile</option>
+                        <option value="Yard">Yard</option>
+                    </select>             
+                    <input readonly placeholder="Output" id="toLength" type="number" name="to-temperature" min="0" class="input-feild">
                 </div>
 
                 <div class="input-group">
-                    <button class="btn btn-reset">Reset</button>
-                    <button class="btn btn-calculate">Calculate</button>
+                    <button onclick="LengthCalculatorReset()" id="btnReset" class="btn btn-reset">Reset</button>
+                    <button onclick="LengthCalculation()" id="btnCalculate" class="btn btn-calculate">Calculate</button>
                 </div>        
             </div>
             
             <div id="lengthOutput" class="container-feild">
-
+                <div id="OutputInfo" class="output-information output-box">
+                    <ul>
+                        <li>The <b>From</b> feild indicate that your given length. Also you need to select unit from the dropdown.</li>
+                        <li>The <b>To</b> feild indicate that your converted length. Also you need to select unit from the dropdown.</li>
+                    </ul>
+                </div>
+                <div id="OutputResult" class="output-results output-box">
+                    <h2>Result</h2>
+                    <table class="output-table">
+                        <tr>
+                            <td>Result</td>
+                            <td>:</td>
+                            <td><span id="lengthResult">00</span></td>
+                        </tr>
+                    </table>
+                    <p>Formula: </p>
+                    <p><span id="lengthFormula"></span></p>
+                </div>
             </div>
+        </div>
+        <div class="author-intro">
+            <p>Develop By <i><a href="https://www.linkedin.com/in/kamrul-hasan100" target="_blank">Kamrul Hasan</a></i> & Powered By <i><a href="https://www.insidethediv.com/" target="_blank">InsideTheDiv</a></i></p>
         </div>        
-    </div>    
+    </div>
+    <script src="data/lengthFormula.js"></script>
+    <script src="../common-assets/js/project-common-js.js"></script>
+    <script src="js/length-converter-js.js"></script> 
 </body>
 </html>
