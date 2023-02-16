@@ -1,27 +1,16 @@
 const objFormula = JSON.parse(formula);
-
+_cmnHideElement("OutputResult");
 document.getElementById("fromSelectBox").value = "Centimeter";
-document.getElementById("OutputResult").style = "display: none";
-document.getElementById("OutputInfo").style = "display: flex";
 
 function LengthCalculatorFormValidate()
 {
     RemoveAllErrorMessage();
-    var fromLength = document.getElementById("fromLength").value;
-    if(IsInputFieldEmpty("fromLength"))
-    {
-        ShowErrorMessageBottomOfTheInputFiled("fromLength", "Enter length.");
-        return false;
-    }
-    else if(isNaN(fromLength))
-    {
-        ShowErrorMessageBottomOfTheInputFiled("fromLength", "Enter valid length.");
-        return false;
-    }
     
-    if(parseFloat(fromLength) < 1)
+    var fromLength = document.getElementById("fromLength").value;
+    
+    if(IsInputFieldEmpty("fromLength") || (isNaN(fromLength) && Number(fromLength) <= 0))
     {
-        ShowErrorMessageBottomOfTheInputFiled("fromLength", "Enter valid length.");
+        ShowErrorMessageBottomOfTheInputFiled("fromLength", "Enter valid Length.");
         return false;
     }
     
@@ -34,10 +23,11 @@ function LengthCalculatorReset()
     document.getElementById("fromSelectBox").value = "Centimeter";
     document.getElementById("toSelectBox").value = "Millimeter";
     document.getElementById("toLength").value = "";
-    document.getElementById("lengthFormula").innerHTML = "";
-    document.getElementById("lengthResult").innerHTML = "00.00";
 
     RemoveAllErrorMessage();
+
+    _cmnHideElement("OutputResult");
+    _cmnShowElement("OutputInfo", "flex");
 }
 
 function LengthCalculation()
@@ -49,25 +39,16 @@ function LengthCalculation()
         var toUnit = document.getElementById("toSelectBox").value;
         var inputLength = document.getElementById("fromLength").value;
         var outputlength = document.getElementById("toLength");
-        document.getElementById("lengthFormula").innerHTML = "";
 
-        for(var i = 0; i < (objFormula.conversions.length) - 1; i++)
-        {            
-            if(objFormula.conversions[i].from.toLowerCase() == fromUnit.toLowerCase() && objFormula.conversions[i].to.toLowerCase() == toUnit.toLowerCase())
-            {
-                document.getElementById("lengthFormula").innerHTML = objFormula.conversions[i].formula;
-            }  
-        }
-        if(count == 0)
-        {
-            document.getElementById("OutputInfo").style = "display: none";
-            document.getElementById("OutputResult").style = "display: flex";
-            count++;
-        }
+        ShowFormula(fromUnit, toUnit);
 
-        var result = LengthCconverter(inputLength, fromUnit,  toUnit)
-        outputlength.value = Number(result).toFixed(2);
+        var result = LengthCconverter(inputLength, fromUnit,  toUnit);
+        outputlength.value = Number(result).toFixed(2);        
         document.getElementById("lengthResult").innerHTML = result.toFixed(2);
+
+        //result div show
+        _cmnHideElement("OutputInfo");
+        _cmnShowElement("OutputResult", "flex");
     }
 }
 
@@ -138,4 +119,20 @@ function LengthCconverter(value, from_unit,  to_unit)
             break;
     }
     return result;
+}
+
+function ShowFormula(fromUnit,toUnit)
+{
+    document.getElementById("lengthFormula").innerHTML = "";
+
+    for(var i = 0; i < (objFormula.conversions.length) - 1; i++)
+    {            
+        if(
+            objFormula.conversions[i].from.toLowerCase() == fromUnit.toLowerCase() 
+            && objFormula.conversions[i].to.toLowerCase() == toUnit.toLowerCase()
+            )
+        {
+            document.getElementById("lengthFormula").innerHTML = objFormula.conversions[i].formula;
+        }
+    }
 }
