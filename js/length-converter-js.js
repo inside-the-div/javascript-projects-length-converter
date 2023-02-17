@@ -1,16 +1,14 @@
 const objFormula = JSON.parse(formula);
-_cmnHideElement("OutputResult");
-document.getElementById("fromSelectBox").value = "Centimeter";
 
+document.getElementById("fromSelectBox").value = "Centimeter";
 function LengthCalculatorFormValidate()
 {
-    RemoveAllErrorMessage();
+    _cmnRemoveAllErrorMessage();
     
     var fromLength = document.getElementById("fromLength").value;
-    
-    if(IsInputFieldEmpty("fromLength") || (isNaN(fromLength) && Number(fromLength) <= 0))
+    if(fromLength == "" || isNaN(fromLength)  || (!isNaN(fromLength) && Number(fromLength) <= 0))
     {
-        ShowErrorMessageBottomOfTheInputFiled("fromLength", "Enter valid Length.");
+        _cmnShowErrorMessageBottomOfTheInputFiled("fromLength", "Enter valid Length.");
         return false;
     }
     
@@ -19,22 +17,23 @@ function LengthCalculatorFormValidate()
 
 function LengthCalculatorReset()
 {
-    document.getElementById("fromLength").value = "";
-    document.getElementById("fromSelectBox").value = "Centimeter";
-    document.getElementById("toSelectBox").value = "Millimeter";
-    document.getElementById("toLength").value = "";
+    if(confirm("Are you sure want to reset the converter?")){
+        document.getElementById("fromLength").value = "";
+        document.getElementById("fromSelectBox").value = "Centimeter";
+        document.getElementById("toSelectBox").value = "Millimeter";
+        document.getElementById("toLength").value = "";
 
-    RemoveAllErrorMessage();
+        _cmnRemoveAllErrorMessage();
 
-    _cmnHideElement("OutputResult");
-    _cmnShowElement("OutputInfo", "flex");
+        _cmnHideElement("OutputResult");
+        _cmnShowElement("OutputInfo", "flex");
+    }
 }
 
 function LengthCalculation()
 {
     if(LengthCalculatorFormValidate())
     {
-        var count = 0;
         var fromUnit = document.getElementById("fromSelectBox").value;
         var toUnit = document.getElementById("toSelectBox").value;
         var inputLength = document.getElementById("fromLength").value;
@@ -42,9 +41,9 @@ function LengthCalculation()
 
         ShowFormula(fromUnit, toUnit);
 
-        var result = LengthCconverter(inputLength, fromUnit,  toUnit);
-        outputlength.value = Number(result).toFixed(2);        
-        document.getElementById("lengthResult").innerHTML = result.toFixed(2);
+        var result = ConvertLength(inputLength, fromUnit,  toUnit);
+        outputlength.value = Number(result).toFixed(2);      
+        document.getElementById("lengthResult").innerHTML = inputLength + ' ' + fromUnit + ' = ' + result.toFixed(2) + ' ' + toUnit; 
 
         //result div show
         _cmnHideElement("OutputInfo");
@@ -52,7 +51,7 @@ function LengthCalculation()
     }
 }
 
-function LengthCconverter(value, from_unit,  to_unit)
+function ConvertLength(value, from_unit,  to_unit)
 {
     value = Number(value);
     var result = 0;

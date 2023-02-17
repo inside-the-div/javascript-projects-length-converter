@@ -1,4 +1,4 @@
-function RemoveAllErrorMessage()
+function _cmnRemoveAllErrorMessage()
 {
     var allErrorBorder = document.getElementsByClassName('error-border');
 	var allErrorMessage = document.getElementsByClassName('error-message');
@@ -15,7 +15,7 @@ function RemoveAllErrorMessage()
     }	  
 }
 
-function ShowErrorMessageBottomOfTheInputFiled(fieldID,errorMessage)
+function _cmnShowErrorMessageBottomOfTheInputFiled(fieldID,errorMessage)
 {
     var inputField = document.getElementById(fieldID);   
     inputField.classList.add("error-border"); // add border
@@ -25,37 +25,6 @@ function ShowErrorMessageBottomOfTheInputFiled(fieldID,errorMessage)
     errorMessageElement.innerHTML = errorMessage; // set the error message in the p tag
     errorMessageElement.classList.add("error-message"); // add the error message stye clsss
     inputField.parentNode.insertBefore(errorMessageElement, inputField.nextSibling); // set the error message uder the error feild
-}
-
-function IsInputFieldEmpty(feildId)
-{
-    var inputField = document.getElementById(feildId);
-    if(inputField.value == "") // check the feild empty or not
-    {
-        return true;
-    }
-
-    return false;
-}
-// check the year leap year or not
-function LeapYear(BirthYear)
-{
-    if (BirthYear % 4 == 0)
-    {
-        if (BirthYear % 100 != 0)
-        {
-            return true;
-        }
-        else
-        {
-            if (BirthYear % 400 == 0)
-            {
-                return true;
-            }
-        }
-    }
-
-    return false;    
 }
 
 function _cmnHideElement(elementId)

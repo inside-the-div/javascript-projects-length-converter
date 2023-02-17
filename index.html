@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+
     <link rel="stylesheet" href="css/project-common-css.css">
     <title>Length Converter</title>
 </head>
@@ -11,10 +14,8 @@
     <div class="container">
         <h1>Length Converter</h1>
         <div id="lengthInput" class="container-feild-group">
-           
             <div class="container-feild">             
                 <div class="input-group">
-                    
                     <div class="input-label">                   
                         <label for="fromSelectBox">From:</label>                        
                     </div>
@@ -33,7 +34,6 @@
                 </div>
                 
                 <div class="input-group">
-                    
                     <div class="input-label">
                         <label for="toSelectBox">To:</label>
                     </div>
@@ -58,39 +58,30 @@
             </div>
             
             <div id="lengthOutput" class="container-feild">
-                
                 <div id="OutputInfo" class="output-information output-box">
                     <ul>
-                        <li>The <b>From</b> feild indicate that your given length. Also you need to select unit from the dropdown.</li>
-                        <li>The <b>To</b> feild indicate that your converted length. Also you need to select unit from the dropdown.</li>
+                        <li>Enter the length value in the <b><i>From Input</i></b> field you want to convert.</li>
+                        <li>Select your given length's unit from the <b><i>From Select Box</i></b>.</li>
+                        <li>Select your desired length's unit from the <b><i>To Select Box</i></b>.</li>
+                        <li>The Converted value will show in the <b><i>To Input Box</i></b>.</li>
                     </ul>
                 </div>
                 
                 <div id="OutputResult" class="output-results output-box">
                     <h2>Result</h2>
-                    <table class="output-table">
-                        <tr>
-                            <td>Result</td>
-                            <td>:</td>
-                            <td><span id="lengthResult">00</span></td>
-                        </tr>
-                    </table>
-                    <p>Formula: </p>
-                    <p><span id="lengthFormula"></span></p>
+                    <p id="lengthResult"></p>
+                    <p><b>Formula:</b> <span id="lengthFormula"></span></p>
                 </div>
-                
             </div>
         </div>
         
         <div class="author-intro">
             <p>Develop By <i><a href="https://www.linkedin.com/in/kamrul-hasan100" target="_blank">Kamrul Hasan</a></i> & Powered By <i><a href="https://www.insidethediv.com/" target="_blank">InsideTheDiv</a></i></p>
         </div>  
-
     </div>
 
     <script src="data/lengthFormula.js"></script>
     <script src="js/project-common-js.js"></script>
     <script src="js/length-converter-js.js"></script> 
-    
 </body>
 </html>
