@@ -1,7 +1,6 @@
 const objFormula = JSON.parse(formula);
 
-document.getElementById("fromSelectBox").value = "Centimeter";
-function LengthCalculatorFormValidate()
+function ValidateLengthConverterForm()
 {
     _cmnRemoveAllErrorMessage();
     
@@ -15,12 +14,12 @@ function LengthCalculatorFormValidate()
     return true;
 }
 
-function LengthCalculatorReset()
+function RestLengthConverter()
 {
     if(confirm("Are you sure want to reset the converter?")){
         document.getElementById("fromLength").value = "";
-        document.getElementById("fromSelectBox").value = "Centimeter";
-        document.getElementById("toSelectBox").value = "Millimeter";
+        document.getElementById("fromUnit").value = "Centimeter";
+        document.getElementById("toUnit").value = "Millimeter";
         document.getElementById("toLength").value = "";
 
         _cmnRemoveAllErrorMessage();
@@ -30,12 +29,12 @@ function LengthCalculatorReset()
     }
 }
 
-function LengthCalculation()
+function CalculateLength()
 {
-    if(LengthCalculatorFormValidate())
+    if(ValidateLengthConverterForm())
     {
-        var fromUnit = document.getElementById("fromSelectBox").value;
-        var toUnit = document.getElementById("toSelectBox").value;
+        var fromUnit = document.getElementById("fromUnit").value;
+        var toUnit = document.getElementById("toUnit").value;
         var inputLength = document.getElementById("fromLength").value;
         var outputlength = document.getElementById("toLength");
 
@@ -51,12 +50,12 @@ function LengthCalculation()
     }
 }
 
-function ConvertLength(value, from_unit,  to_unit)
+function ConvertLength(value, fromUnit,  toUnit)
 {
     value = Number(value);
     var result = 0;
     var conversionFactor = 0;
-    switch (from_unit)
+    switch (fromUnit)
     {
         case "Millimeter":
             conversionFactor = 1;
@@ -87,7 +86,7 @@ function ConvertLength(value, from_unit,  to_unit)
             break;
     }
 
-    switch (to_unit)
+    switch (toUnit)
     {
         case "Millimeter":
             result = value * conversionFactor;
@@ -124,7 +123,7 @@ function ShowFormula(fromUnit,toUnit)
 {
     document.getElementById("lengthFormula").innerHTML = "";
 
-    for(var i = 0; i < (objFormula.conversions.length) - 1; i++)
+    for(var i = 0; i <objFormula.conversions.length; i++)
     {            
         if(
             objFormula.conversions[i].from.toLowerCase() == fromUnit.toLowerCase() 

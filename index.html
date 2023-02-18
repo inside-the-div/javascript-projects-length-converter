@@ -14,13 +14,13 @@
     <div class="container">
         <h1>Length Converter</h1>
         <div id="lengthInput" class="container-feild-group">
-            <div class="container-feild">             
+            <div class="container-feild">
                 <div class="input-group">
-                    <div class="input-label">                   
-                        <label for="fromSelectBox">From:</label>                        
+                    <div class="input-label">
+                        <label for="fromUnit">From:</label>
                     </div>
-                    <select name="temp-from" class="select-group" id="fromSelectBox">
-                        <option value="Millimeter">Millimeter</option>
+                    <select name="temp-from" class="select-group" id="fromUnit">
+                        <option selected value="Millimeter">Millimeter</option>
                         <option value="Centimeter">Centimeter</option>
                         <option value="Decimeter">Decimeter</option>
                         <option value="Meter">Meter</option>
@@ -29,17 +29,17 @@
                         <option value="Inch">Inch</option>
                         <option value="Mile">Mile</option>
                         <option value="Yard">Yard</option>
-                    </select>            
-                    <input placeholder="From Length" id="fromLength" type="number" name="from-length" min="0" class="input-feild">
+                    </select>
+                    <input placeholder="Input Length" id="fromLength" type="number" name="from-length" min="0" class="input-feild">
                 </div>
                 
                 <div class="input-group">
                     <div class="input-label">
-                        <label for="toSelectBox">To:</label>
+                        <label for="toUnit">To:</label>
                     </div>
-                    <select name="to-from" class="select-group" id="toSelectBox">
+                    <select name="to-from" class="select-group" id="toUnit">
                         <option value="Millimeter">Millimeter</option>
-                        <option value="Centimeter">Centimeter</option>
+                        <option selected value="Centimeter">Centimeter</option>
                         <option value="Decimeter">Decimeter</option>
                         <option value="Meter">Meter</option>
                         <option value="Kilometer">Kilometer</option>
@@ -47,18 +47,19 @@
                         <option value="Inch">Inch</option>
                         <option value="Mile">Mile</option>
                         <option value="Yard">Yard</option>
-                    </select>             
-                    <input readonly placeholder="Output" id="toLength" type="number" name="to-temperature" min="0" class="input-feild">
+                    </select>
+                    <input readonly placeholder="Output" id="toLength" type="number" name="to-temperature" min="0" class="input-feild readonly-background">
                 </div>
 
                 <div class="input-group">
-                    <button onclick="LengthCalculatorReset()" id="btnReset" class="btn btn-reset">Reset</button>
-                    <button onclick="LengthCalculation()" id="btnCalculate" class="btn btn-calculate">Calculate</button>
-                </div>  
+                    <button onclick="RestLengthConverter()" id="btnReset" class="btn btn-reset">Reset</button>
+                    <button onclick="CalculateLength()" id="btnCalculate" class="btn btn-calculate">Calculate</button>
+                </div>
             </div>
-            
+
             <div id="lengthOutput" class="container-feild">
                 <div id="OutputInfo" class="output-information output-box">
+                    <h2>Basic Information</h2>
                     <ul>
                         <li>Enter the length value in the <b><i>From Input</i></b> field you want to convert.</li>
                         <li>Select your given length's unit from the <b><i>From Select Box</i></b>.</li>
@@ -66,7 +67,7 @@
                         <li>The Converted value will show in the <b><i>To Input Box</i></b>.</li>
                     </ul>
                 </div>
-                
+
                 <div id="OutputResult" class="output-results output-box">
                     <h2>Result</h2>
                     <p id="lengthResult"></p>
@@ -74,7 +75,7 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="author-intro">
             <p>Develop By <i><a href="https://www.linkedin.com/in/kamrul-hasan100" target="_blank">Kamrul Hasan</a></i> & Powered By <i><a href="https://www.insidethediv.com/" target="_blank">InsideTheDiv</a></i></p>
         </div>  
@@ -82,6 +83,6 @@
 
     <script src="data/lengthFormula.js"></script>
     <script src="js/project-common-js.js"></script>
-    <script src="js/length-converter-js.js"></script> 
+    <script src="js/length-converter-js.js"></script>
 </body>
 </html>
