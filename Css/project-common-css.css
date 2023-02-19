@@ -155,7 +155,7 @@ body{
 .tool-author-intro a{
     text-decoration: none;
     color: rgb(154, 197, 163);
-    transition: .tool-5s;
+    transition: .5s;
 }
 .tool-author-intro a:hover{
     color: rgb(84, 134, 95);
