@@ -20,7 +20,7 @@ function RestLengthConverter()
         document.getElementById("fromLength").value = "";
         document.getElementById("fromUnit").value = "Centimeter";
         document.getElementById("toUnit").value = "Millimeter";
-        document.getElementById("toLength").value = "";
+        document.getElementById("outputLength").value = "";
 
         _cmnRemoveAllErrorMessage();
 
@@ -35,14 +35,14 @@ function CalculateLength()
     {
         var fromUnit = document.getElementById("fromUnit").value;
         var toUnit = document.getElementById("toUnit").value;
-        var inputLength = document.getElementById("fromLength").value;
-        var outputlength = document.getElementById("toLength");
+        var fromLength = document.getElementById("fromLength").value;
+        var outputlength = document.getElementById("outputLength");
 
         ShowFormula(fromUnit, toUnit);
 
-        var result = ConvertLength(inputLength, fromUnit,  toUnit);
+        var result = ConvertLength(fromLength, fromUnit,  toUnit);
         outputlength.value = Number(result).toFixed(2);      
-        document.getElementById("lengthResult").innerHTML = inputLength + ' ' + fromUnit + ' = ' + result.toFixed(2) + ' ' + toUnit; 
+        document.getElementById("lengthResult").innerHTML = fromLength + ' ' + fromUnit + ' = ' + result.toFixed(2) + ' ' + toUnit; 
 
         //result div show
         _cmnHideElement("OutputInfo");
@@ -50,9 +50,9 @@ function CalculateLength()
     }
 }
 
-function ConvertLength(value, fromUnit,  toUnit)
+function ConvertLength(fromLength, fromUnit,  toUnit)
 {
-    value = Number(value);
+    fromLength = Number(fromLength);
     var result = 0;
     var conversionFactor = 0;
     switch (fromUnit)
@@ -89,31 +89,31 @@ function ConvertLength(value, fromUnit,  toUnit)
     switch (toUnit)
     {
         case "Millimeter":
-            result = value * conversionFactor;
+            result = fromLength * conversionFactor;
             break;
         case "Centimeter":
-            result = value * conversionFactor / 10;
+            result = fromLength * conversionFactor / 10;
             break;
         case "Decimeter":
-            result = value * conversionFactor / 100;
+            result = fromLength * conversionFactor / 100;
             break;
         case "Meter":
-            result = value * conversionFactor / 1000;
+            result = fromLength * conversionFactor / 1000;
             break;
         case "Kilometer":
-            result = value * conversionFactor / 1000000;
+            result = fromLength * conversionFactor / 1000000;
             break;
         case "Foot":
-            result = value * conversionFactor / 304.8;
+            result = fromLength * conversionFactor / 304.8;
             break;
         case "Inch":
-            result = value * conversionFactor / 25.4;
+            result = fromLength * conversionFactor / 25.4;
             break;
         case "Mile":
-            result = value * conversionFactor / 1609344;
+            result = fromLength * conversionFactor / 1609344;
             break;
         case "Yard":
-            result = value * conversionFactor / 914.4;
+            result = fromLength * conversionFactor / 914.4;
             break;
     }
     return result;
