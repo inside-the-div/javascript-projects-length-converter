@@ -88,7 +88,7 @@ function ConvertLength(fromLength, fromUnit,  toUnit)
             makeThisMillimeter = 914.4;
             break;
     }
-    inMillimeter = value * makeThisMillimeter;
+    inMillimeter = fromLength * makeThisMillimeter;
 
     //convert the millimiter value to the targeted unit
     switch (toUnit)
