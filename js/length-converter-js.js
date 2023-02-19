@@ -54,66 +54,71 @@ function ConvertLength(fromLength, fromUnit,  toUnit)
 {
     fromLength = Number(fromLength);
     var result = 0;
-    var conversionFactor = 0;
+    var makeThisMillimeter = 0;
+    var inMillimeter = 0;
+
+    // first make the given unit to millimeter
     switch (fromUnit)
     {
         case "Millimeter":
-            conversionFactor = 1;
+            makeThisMillimeter = 1;
             break;
         case "Centimeter":
-            conversionFactor = 10;
+            makeThisMillimeter = 10;
             break;
         case "Decimeter":
-            conversionFactor = 100;
+            makeThisMillimeter = 100;
             break;
         case "Meter":
-            conversionFactor = 1000;
+            makeThisMillimeter = 1000;
             break;
         case "Kilometer":
-            conversionFactor = 1000000;
+            makeThisMillimeter = 1000000;
             break;
         case "Foot":
-            conversionFactor = 304.8;
+            makeThisMillimeter = 304.8;
             break;
         case "Inch":
-            conversionFactor = 25.4;
+            makeThisMillimeter = 25.4;
             break;
         case "Mile":
-            conversionFactor = 1609344;
+            makeThisMillimeter = 1609344;
             break;
         case "Yard":
-            conversionFactor = 914.4;
+            makeThisMillimeter = 914.4;
             break;
     }
+    inMillimeter = value * makeThisMillimeter;
 
+    //convert the millimiter value to the targeted unit
     switch (toUnit)
     {
         case "Millimeter":
-            result = fromLength * conversionFactor;
+            result = inMillimeter;
             break;
         case "Centimeter":
-            result = fromLength * conversionFactor / 10;
+            result = inMillimeter / 10;
             break;
         case "Decimeter":
-            result = fromLength * conversionFactor / 100;
+            result = inMillimeter / 100;
             break;
         case "Meter":
-            result = fromLength * conversionFactor / 1000;
+            result = inMillimeter / 1000;
             break;
         case "Kilometer":
-            result = fromLength * conversionFactor / 1000000;
+            result = inMillimeter / 1000000;
             break;
         case "Foot":
-            result = fromLength * conversionFactor / 304.8;
+            result = inMillimeter / 304.8;
             break;
         case "Inch":
-            result = fromLength * conversionFactor / 25.4;
+            result = inMillimeter / 25.4;
             break;
         case "Mile":
-            result = fromLength * conversionFactor / 1609344;
+            result = inMillimeter / 1609344;
             break;
         case "Yard":
-            result = fromLength * conversionFactor / 914.4;
+            result = inMillimeter / 914.4;
             break;
     }
     return result;

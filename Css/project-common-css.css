@@ -7,7 +7,9 @@
     font-family: 'Roboto', sans-serif;
     letter-spacing: 1px;
 }
-
+body{
+    background-color: #e2e2e2;
+}
 .container{ 
     display: flex;
     flex-direction: column;
@@ -116,6 +118,7 @@
 }
 .output-box ul li{
     padding: 2px;
+    font-size: 12px;
 }  
 
 #OutputInfo{
