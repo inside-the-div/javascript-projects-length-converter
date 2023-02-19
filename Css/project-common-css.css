@@ -10,14 +10,14 @@
 body{
     background-color: #e2e2e2;
 }
-.container{ 
+.tool-container{ 
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 950px;
     margin: 50px auto 0px auto;
 }
-.container h1{
+.tool-container h1{
     display: block;
     text-align: center;
     margin: 20px 10px;
@@ -26,20 +26,20 @@ body{
     font-size: 40px;
     font-weight: 700;
 }
-.container-feild-group{
+.tool-container-feild-group{
     display: flex;
     width: 98%;
 }
-.container-feild{
+.tool-container-feild{
     display: block;
     width: 50%;
     padding: 10px;
     margin: 5px;
     background: rgb(154, 197, 163);
     border-radius: 10px;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    box-shadow: rgba(0, 0, 0, 0.tool-16) 0px 3px 6px, rgba(0, 0, 0, 0.tool-23) 0px 3px 6px;
 }
-.input-group{
+.tool-input-group{
     display: flex;
     justify-items: center;
     justify-content: space-between;
@@ -49,25 +49,25 @@ body{
     padding: 10px 5px;
     border-bottom: 1px solid rgb(222, 228, 228);
 }
-.input-group:last-child{
+.tool-input-group:last-child{
     border: none;
 }
-.input-label{
+.tool-input-label{
     display: block;
     font-size: 20px;
     line-height: 40px;
     min-width: 60px; 
 }
-.input-feild{
+.tool-input-feild{
     display: block;
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    box-shadow: rgba(60, 64, 67, 0.tool-3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.tool-15) 0px 2px 6px 2px;
     width: 150px;
     height: 35px;
     border: None;
     border-radius: 5px;
     padding: 5px;
 }
-.btn{
+.tool-btn{
     border: none;
     cursor: pointer;
     min-width: 100px;
@@ -76,18 +76,18 @@ body{
     border-radius: 5px;
     font-size: 20px;
     color: aliceblue;    
-    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    box-shadow: rgba(0, 0, 0, 0.tool-15) 1.tool-95px 1.tool-95px 2.tool-6px;
 }
-.btn:hover{
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+.tool-btn:hover{
+    box-shadow: rgba(50, 50, 93, 0.tool-25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.tool-3) 0px 18px 36px -18px inset;
 }
-.btn-reset{
+.tool-btn-reset{
     width: 150px;
     margin-left: 0px;
     background: rgb(199, 214, 63);
     color: rgb(58, 25, 25);
 }
-.select-group{
+.tool-select-group{
     float: right;
     border: none;
     height: 35px;
@@ -96,15 +96,15 @@ body{
     border-right:5px ;
     border-radius: 5px;
     font-weight: 700;
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    box-shadow: rgba(60, 64, 67, 0.tool-3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.tool-15) 0px 2px 6px 2px;
 
 }
-.btn-calculate{
+.tool-btn-calculate{
     width: 150px;
     margin-right: 0px;
     background: rgb(33, 83, 219);
 }
-.output-box{
+.tool-output-box{
     display: none;
     width: 100%;
     height: 100%;
@@ -112,11 +112,11 @@ body{
     justify-content: center;
     align-items: center;
 }
-.output-box ul{
+.tool-output-box ul{
     margin: 5px;
     margin-left: 25px;
 }
-.output-box ul li{
+.tool-output-box ul li{
     padding: 2px;
     font-size: 12px;
 }  
@@ -124,46 +124,46 @@ body{
 #OutputInfo{
     display: flex;
 }
-.output-box h2{
+.tool-output-box h2{
     text-align: center;
     margin-bottom: 10px;
     font-size: 30px;
 }
-.output-box p{
+.tool-output-box p{
     text-align: left;
     margin-top: 10px;
     font-size: 20px;
     align-self: flex-start;
 }
-.output-box table tr{
+.tool-output-box table tr{
     height: 30px;
 }
-.output-table{
+.tool-output-table{
     width: 100%;
     font-size: 25px;
 }
-.author-intro{
+.tool-author-intro{
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     color: #5A5A5A;
 }
-.author-intro p{
+.tool-author-intro p{
     margin: 5px;
 }
-.author-intro a{
+.tool-author-intro a{
     text-decoration: none;
     color: rgb(154, 197, 163);
-    transition: .5s;
+    transition: .tool-5s;
 }
-.author-intro a:hover{
+.tool-author-intro a:hover{
     color: rgb(84, 134, 95);
 }
-.error-border{
+.tool-error-border{
     border: 2px solid red;
 }
-.error-message{
+.tool-error-message{
     display: block;
     color: red;
     font-size: 11px;
@@ -174,26 +174,26 @@ body{
     bottom: 1px;
     right: 0px;
 }
-.readonly-background{
+.tool-readonly-background{
     background: #E5E5E5;
 }
 @media only screen and (max-width: 700px) {
-    .container{
+    .tool-container{
         width: 98%;
         margin: 10px;
         box-sizing: border-box;
         padding: 5px;
         align-items: center;
     }
-    .container h1{
+    .tool-container h1{
         margin: 10px 5px;
         font-size: 25px;
     }
-    .container-feild-group{
+    .tool-container-feild-group{
         width: 98%;
         flex-direction: column;       
     }
-    .container-feild{
+    .tool-container-feild{
         width: 98%;
     }
 }

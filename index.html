@@ -11,15 +11,15 @@
     <title>Length Converter</title>
 </head>
 <body>
-    <div class="container">
+    <div class="tool-container">
         <h1>Length Converter</h1>
-        <div id="lengthInput" class="container-feild-group">
-            <div class="container-feild">
-                <div class="input-group">
-                    <div class="input-label">
+        <div id="lengthInput" class="tool-container-feild-group">
+            <div class="tool-container-feild">
+                <div class="tool-input-group">
+                    <div class="tool-input-label">
                         <label for="fromUnit">From:</label>
                     </div>
-                    <select class="select-group" id="fromUnit">
+                    <select class="tool-select-group" id="fromUnit">
                         <option selected value="Millimeter">Millimeter</option>
                         <option value="Centimeter">Centimeter</option>
                         <option value="Decimeter">Decimeter</option>
@@ -30,14 +30,14 @@
                         <option value="Mile">Mile</option>
                         <option value="Yard">Yard</option>
                     </select>
-                    <input placeholder="Input Length" id="fromLength" type="number" name="from-length" min="0" class="input-feild">
+                    <input placeholder="Input Length" id="fromLength" type="number" name="from-length" min="0" class="tool-input-feild">
                 </div>
                 
-                <div class="input-group">
-                    <div class="input-label">
+                <div class="tool-input-group">
+                    <div class="tool-input-label">
                         <label for="toUnit">To:</label>
                     </div>
-                    <select class="select-group" id="toUnit">
+                    <select class="tool-select-group" id="toUnit">
                         <option value="Millimeter">Millimeter</option>
                         <option selected value="Centimeter">Centimeter</option>
                         <option value="Decimeter">Decimeter</option>
@@ -48,17 +48,17 @@
                         <option value="Mile">Mile</option>
                         <option value="Yard">Yard</option>
                     </select>
-                    <input readonly placeholder="Output" id="outputLength" type="number" name="to-temperature" min="0" class="input-feild readonly-background">
+                    <input readonly placeholder="Output" id="outputLength" type="number" name="to-temperature" min="0" class="tool-input-feild readonly-background">
                 </div>
 
-                <div class="input-group">
-                    <button onclick="RestLengthConverter()" id="btnReset" class="btn btn-reset">Reset</button>
-                    <button onclick="CalculateLength()" id="btnCalculate" class="btn btn-calculate">Calculate</button>
+                <div class="tool-input-group">
+                    <button onclick="RestLengthConverter()" id="btnReset" class="tool-btn tool-btn-reset">Reset</button>
+                    <button onclick="CalculateLength()" id="btnCalculate" class="tool-btn tool-btn-calculate">Calculate</button>
                 </div>
             </div>
 
-            <div class="container-feild">
-                <div id="OutputInfo" class="output-information output-box">
+            <div class="tool-container-feild">
+                <div id="OutputInfo" class="tool-output-information tool-output-box">
                     <h2>Basic Information</h2>
                     <!-- <ul>
                         <li>Enter the length value in the <b><i>From Input</i></b> field you want to convert.</li>
@@ -79,7 +79,7 @@
                     </ul>
                 </div>
 
-                <div id="OutputResult" class="output-results output-box">
+                <div id="OutputResult" class="tool-output-results tool-output-box">
                     <h2>Result</h2>
                     <p id="lengthResult"></p>
                     <p><b>Formula:</b> <span id="lengthFormula"></span></p>
@@ -87,7 +87,7 @@
             </div>
         </div>
 
-        <div class="author-intro">
+        <div class="tool-author-intro">
             <p>Develop By <i><a href="https://www.linkedin.com/in/kamrul-hasan100" target="_blank">Kamrul Hasan</a></i> & Powered By <i><a href="https://www.insidethediv.com/" target="_blank">InsideTheDiv</a></i></p>
         </div>  
     </div>
